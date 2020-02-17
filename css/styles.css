@@ -1,0 +1,623 @@
+body {
+    margin: 0;
+    font-family:  'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.6; 
+}
+*,
+*:before,
+*:after {  
+    box-sizing: border-box;
+}
+/*Контейнер заголовка */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0; /*величина отступа от каждого края */
+}
+hr {
+    display: block;
+    width: 100%;
+    height: 1px;
+    border: 0;
+    margin: 45px 0 ; /*отступ сверху снизу 35 , лев и прав 0*/
+    background-color: rgb(230, 222, 222);
+}
+/*intro главный фон */
+.intro {
+    display: flex;/**/ 
+    flex-direction: column;/**/ 
+    justify-content: center;/**/ 
+    width: 100%;  /*ширина */
+    height: 100vh; /*100% высота экрана  */    /**/ 
+    background: url("../img/background1.jpg") center no-repeat ; /*по центру , без повторов*/
+    background-size: cover; /*занимает всю площадь экрана*/
+}  
+/*Блок для надписи WELCOME*/ 
+.intro__ineer{
+    
+    width: 100%;
+    max-width: 888px; /*Устанавливает максимальную ширину элемента*/ 
+    margin: 0 auto; /*Выравнивание по центру*/ 
+    text-align: center; /*Выравнивание по центру КНОПКА*/ 
+}
+/*Заголовок WELCOME*/ 
+.intro__title{
+    background: linear-gradient(to right, rgb(160, 79, 149) 25%, white 70%);  /*Переход цвета в слове*/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 120px;
+    font-weight: 700;
+    text-transform: uppercase; /* Все символы текста становятся прописными*/
+    text-align: center;
+    line-height: 1; /*межстрочный интервал*/
+}  
+/*Полоска под заголовком WELCOME*/ 
+/*intro__title:after- делает псевдо элемент */ 
+.intro__title:after{  
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 60px auto  ; 
+    background-color: #fff;
+}
+/*Заголовок над  WELCOME*/
+.intro__ovtitle{
+    margin-bottom: 20px; /*Отступ */
+    font-family: 'Kaushan Script', cursive;
+    font-size: 60px;
+    text-align: center;
+    background: linear-gradient(to right, rgb(160, 79, 149) 25%, white 70%);  /*Переход цвета в слове*/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+ /* ШАПКА*/ 
+ .header {
+     width: 100%;
+     position: absolute; /*позиционирования элемента относительно окна браузера*/ 
+     top: 0;  /*прижать к верху */ 
+     left: 0; /*прижать слева*/ 
+     right: 0; /*прижать справа*/ 
+     z-index: 1000; /**/ 
+     padding-top: 30px; /*отступ для всей шапки сверху*/ 
+ }
+ /*Делаем навигацию лого-слева меню-справа и все по центру*/ 
+ .header__inner{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+ /*Логотип Happy*/ 
+ .head__logo {
+     font-size: 30px;
+     font-weight: 700;  /*насыщенность шрифта*/ 
+     color: black;
+ }
+ /*Навигация меню шапки*/
+ .nav {
+     font-size: 14px;
+     text-transform: uppercase; /* Все символы текста становятся прописными*/
+ }
+  /*Шапка меню*/ 
+ .nav__link {
+     display: inline-block;/*обтекает МЕНЮ от МЕНЮ*/
+     vertical-align: top;/*Выравнивание верхнего края элемента по верху самого высокого элемента строки*/
+     margin: 0 10px; /* величину отступа от каждого края элемента*/
+     color: #fff;
+     text-decoration: none;  /*убрали подчеркивание снизу*/ 
+     
+     position: relative; /*фун-я для выравнивания линии под текст*/ 
+    }
+ /*появления линии при наводе МЕНЮ*/ 
+ .nav__link:after{
+     content: "";
+     display: block;
+     width: 100%;
+     height: 3px;
+     background-color: #fff;
+     opacity: 0; /*уровень прозрачности элемента веб-страницы*/ 
+     transition: color .10s ;/*при наводе на меню меняется цвет с задержкой 2с*/ 
+     position: absolute; /*фун-я для выравнивания линии под текст*/ 
+     top: 100%;
+     left: 0;
+     z-index: 1;
+     transition: opacity .4s; 
+ }
+  
+ /*фун-ия при наводе на меню появл линия */ 
+ .nav__link:hover:after {
+     opacity: 1;/*уровень прозрачности элемента веб-страницы*/ 
+ }
+ 
+ /*Кнопка*/
+ .btn {
+    border: 3px solid white;
+    font-size: 40px;
+    font-weight: 700;
+    color: rgb(190, 142, 223);
+    text-decoration: none;
+    text-transform: uppercase;
+ }
+ 
+ .btn:hover{
+     background-color: #fff;
+     
+     color: rgb(212, 132, 219);
+     transition: color .10s ;
+ }
+  
+ 
+ .section{
+     padding: 80px 0;
+ }
+ /*Делаем фон для секции на осн картинки*/
+ .section--devices2{
+     background: url("../img/background2.jpg") center no-repeat;
+     -webkit-background-size: cover;
+     background-size: cover;
+ }
+ .section__1ovtitle{
+    font-family: 'Kaushan Script', cursive;   
+     font-size: 24px;
+     color: #fff
+ }
+ .section__1title{
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+ }
+
+ .section__header{
+     width: 100%;
+     max-width: 950px;
+     margin: 0 auto 50px;
+     text-align: center;
+ }
+ .section__ovtitle {
+    font-family: 'Kaushan Script', cursive;                   
+     font-size: 24px;
+     color: #333;
+ }
+
+.section__title{
+    font-size: 30px;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+}
+/*Псевдо элемент - полоска*/                         
+.section__title:after{
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 40px auto  0; 
+
+    background-color: rgb(31, 38, 48);
+}
+.section__text {
+    font-size: 15px;
+    color: #999;
+}
+
+/*Фото для 1 секции*/
+.about {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.about__item {
+    width: 380px;
+    position: relative; /*позиционировать текст по верх картинки*/
+    background-color: #999; /*для оставления фона после сдвга картинки*/
+}
+
+
+/*При наводе на картинку сдвегаем ее */
+.about__item:hover .about__img {
+    transform: translate3d(-10px, -10px, 0); /*перемещение картинки пооси х у z*/
+
+}
+
+ /*Затемнение на фото секц1*/
+.about__item:hover .about__img img {
+    opacity: .6; /*Прозрачность */
+}
+
+
+/*показываем текст при наводе*/
+.about__item:hover .about__text {
+    opacity: 1;
+}
+/*переход цвета*/
+.about__img {
+    background: linear-gradient( to bottom, rgb(253, 253, 253), rgb(0, 0, 0) );
+    transition: transform .3s linear; /*для плавного сдвижения картин*/
+}
+/*Тень фото */
+.about__img img {
+    display: block;  /*Тень не выходит за рамки  */
+    transition: opacity .5s linear;/* задержка  */ 
+}
+/*Текст на фото */
+.about__text {
+    width: 100%;
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    opacity: 0;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 2;
+    transform: translate3d(0, -50%, 0);
+
+    transition: opacity .3s linear; /*для плавного отображения текста */
+}
+
+
+.services {
+    display: flex;
+}
+
+.services__item {
+    flex: 1 1 0;
+    padding-left: 90px;
+    padding-right: 20px;
+    position: relative;
+}
+
+.services__icon {
+    position: absolute;
+    top: 0;
+    left: -10px;
+    z-index: 1;
+}
+.services__title {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+    text-transform: uppercase;
+}
+.services__text{
+    font-size: 12px;
+    color: #333;
+}
+
+/*ВИДЕО*/
+.introvid{
+    max-height: 100vh;
+    overflow:hidden;
+    position: relative;
+
+    background: url("../vid/print.jpg") center no-repeat; /*Если видео не загрузится будет картинка*/
+    background-size: cover;
+}
+/*псевдо элемент -тень*/
+.introvid:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, .5); /*цвет полупрозрачный*/
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.video__content1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+.video__title1{
+    margin: 0;
+
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+}
+.container12 {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.video{
+    position: relative;
+    z-index: 1;
+    padding-bottom: 56.25%;
+} 
+ .video__media{
+     width: 100%;
+     height: auto;
+     position: absolute;
+     top: 0;
+     left: 0;
+
+ }
+/*НОВЫЙ БЛОК wedo*/
+ .wedo{ 
+     display: flex;
+     
+ }
+
+ .wedo__item {
+     width: 50%;
+ }
+/*Блок wedo в нем accordion*/
+.accordion__item {
+    margin-bottom: 10px;
+    border: 1px solid #e5e5e5;
+}
+
+
+.accordion__header {
+    padding: 15px 20px 15px 65px;
+    position: relative;
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+}
+/*Псевдо элемент стрелка*/
+.accordion__header:after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+
+    margin-top: 5px;
+
+    border-top: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    z-index: 1;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.accordion__icon{
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+.accordion__content {
+    padding: 15px 20px;
+   display: none; /*скрываем контент*/
+
+    font-size: 15px;
+    color: #999;
+    font-style: initial;
+    font-weight: 300;
+}
+.accordion__title {
+    font-size: 14px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+ /**/
+  /*Делаем фон для секции на осн картинки*/
+  .section--devices3{
+    background: url("../img/background3.jpg") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+/*блок для соц сет*/
+.social{
+    display: flex;
+    justify-content: center;/*выравн по центру*/
+}
+.social__item {
+    /*высота и ширина иконок*/
+width: 55px;
+height: 55px;
+padding: 10px 10px; /*отступ с лев прав низ верх 10px*/
+
+background-color: #8be6f7; /*фон для блока */
+border-right: 1px solid #ffffff; /*границы в блоке*/
+
+font-size: 35px;
+text-decoration: none;/*убрали подчеркивание*/
+color:#ffffff ;/* цвет иконок*/
+line-height: 1;
+}
+
+.social__item:last-child {
+    border-right: 0; /*у послед икон нет цвет*/
+}
+
+/*При наводе на иконку*/
+.social__item:hover {
+    color: rgb(4, 130, 180);
+    border-color: #ffffff;
+}
+
+/**/
+.logos {
+    display: flex;
+    justify-content: space-between; /*чтобы лого раздвинуть равномерно */
+    align-items: center; 
+
+}
+
+/*НОВЫЙ БЛОК ФОТО ГАЛЕРИЯ*/
+
+/* Works */
+.works {
+    display: flex;
+}
+
+.works__col {
+    flex: 1 1 0;
+}
+
+.works__item {
+    position: relative;
+
+    background: linear-gradient(to bottom, #f38181, #fce38a);
+}
+/*при наводе на карточку будет уменьшаться прозрачность картинки*/
+.works__item:hover .works__image {
+    opacity: .1;
+}
+/*при наводе на фото появляется надпись*/
+.works__item:hover .works__info {
+    opacity: 1;
+}
+
+.works__image {
+    display: block; /*чтобы ничего лишнего не вылезало а держалось в блоке*/
+    max-width: 100%;
+    height: auto;
+
+    transition: opacity .2s linear;
+}
+/*выравнили блок по центру по вертикали*/
+.works__info {
+    width: 100%;
+    padding: 0 15px;
+
+    text-align: center;  /*выравниваем текст в картинке по центру*/
+    color: #fff;
+    opacity: 0;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+
+    transform: translate3d(0, -50%, 0);
+    transition: opacity .2s linear;
+}
+
+.works__title {
+    margin-bottom: 5px;
+
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.works__text {
+    font-size: 15px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+
+/* Reviews */
+
+.reviews {
+    padding: 0 110px;  /* делаем отступ для блока */
+    position: relative; /*Позиционировать стрелки */
+}
+
+.reviews__item {
+    padding-left: 255px;
+    position: relative;
+}
+
+.reviews__photo {
+    border: 2px solid #ffffff;
+    border-radius: 50%; /*радиус для фотографии*/
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.reviews__text {
+    margin-bottom: 15px; /* отделяем текст автора откоммента */
+
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 400;
+    color: #999;
+}
+
+.reviews__author {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 24px;
+    color: #333;
+}
+/* Псевдо элемент полоска */
+.reviews__author:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 60px;
+    height: 3px;
+    margin-right: 10px;
+
+    background-color: #b84a4a;
+}
+/*Стрелки */
+.reviews__btn {
+    font-size: 0;        /*для скрытия\/ текста*/ 
+    color: transparent; /*скрытия текста кнопки*/ 
+
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    transform: translateY(-50%); /*Выравниванием по вертикали */ 
+}
+/*делаем саму стрелку*/ 
+.reviews__btn:after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+
+    border-top: 2px solid #ccc;
+    border-left: 2px solid #ccc;
+}
+/*координируем стрелку лев*/ 
+.reviews__btn--prev {
+    left: 0;  /*прижимаем слева*/ 
+    transform: rotate(-45deg);
+}
+/*координируем стрелку прав*/ 
+.reviews__btn--next {
+    right: 0;/*прижимаем справа*/ 
+    transform: rotate(135deg);
+}
+
+/*новый блок друзья */
+.section--clients{
+    background-color: #f5f5f5;
+
+}
+
+.clients{
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.clients__item {
+    width: 50%; /*каждый блок занимает 50 %*/
+    padding: 0 45px 0 175px;
+    position: relative;
+}
